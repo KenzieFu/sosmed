@@ -43,12 +43,12 @@ if(isset($_POST['next'])){
   <body>
   <div class="wrapper">
   <!-- nav wrapper -->
-  <div class="nav-wrapper">
+  <div class="nav-wrapper" style="background-color: white;">
 
-  	<div class="nav-container">
+  	<div class="nav-container" >
   		<div class="nav-second">
   			<ul>
-  				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"style="color:white;"></i></a></li>
+  				<li><a href="#"><img src="../assets/images/saveyu.png" style="width: 45px; height: 45px; align-items:center"></a></li>
   			</ul>
   		</div><!-- nav second ends-->
   	</div><!-- nav container ends -->
@@ -75,7 +75,7 @@ if(isset($_POST['next'])){
   						</ul>
   					</div>
   					<div>
-  						<input type="submit" name="next" value="Next"/>
+  						<input type="submit" name="next" value="Next" style="background-color: black; color:white"/>
   					</div>
   				 </form>
   			</div>
