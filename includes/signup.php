@@ -75,7 +75,7 @@ if(isset($_POST['next'])){
   						</ul>
   					</div>
   					<div>
-  						<input type="submit" name="next" value="Next"/>
+  						<input style="background:black" type="submit" name="next" value="Next"/>
   					</div>
   				 </form>
   			</div>
