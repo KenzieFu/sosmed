@@ -100,7 +100,7 @@ include 'core/init.php';
 
                     <!--Post SHOW WRAPPER-->
                     <div class='posts'>
-                        <?php $getFromT->posts( $user_id, 100 );
+                        <?php $getFromT->getUserPosts( $profileId,$user_id );
                         ?>
                     </div>
                     <!--POSTS SHOW WRAPPER-->
@@ -116,7 +116,7 @@ include 'core/init.php';
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/delete.js'></script>
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/comment.js'></script>
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/popupForm.js'></script>
-                    <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script>
+                    <!-- <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/fetch.js'></script> -->
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/messages.js'></script>
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/notification.js'></script>
                     <script type='text/javascript' src='<?php echo BASE_URL;?>assets/js/postMessage.js'></script>

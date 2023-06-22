@@ -129,11 +129,123 @@ class Post extends User{
 	    }
 	}
   
-	public function getUserPosts($user_id){
-		$stmt = $this->pdo->prepare("SELECT * FROM `posts` LEFT JOIN `users` ON `postBy` = `user_id` WHERE `postBy` = :user_id AND `repostID` = '0' OR `repostBy` = :user_id ORDER BY `postID` DESC");
+	public function getUserPosts($user_id,$auth_id){
+		$stmt = $this->pdo->prepare("SELECT * FROM `posts` LEFT JOIN `users` ON `postBy` = `user_id` WHERE `postBy` = :user_id AND `repostID`='0'  OR `repostBy` = :user_id ORDER BY `postID` DESC");
 		$stmt->bindParam(":user_id", $user_id, PDO::PARAM_INT);
 		$stmt->execute();
-		return $stmt->fetchAll(PDO::FETCH_OBJ);
+		$posts= $stmt->fetchAll(PDO::FETCH_OBJ);
+		foreach ($posts as $post) {
+			$likes = $this->likes($auth_id, $post->postID);
+			$repost = $this->checkRepost($post->postID, $auth_id);
+			$user = $this->userData($post->repostBy);
+			  
+			 echo '<div class="all-post">
+					<div class="t-show-wrap">
+					 <div class="t-show-inner">
+					 '.(( $post->repostID > 0 ) ? '
+						<div class="t-show-banner">
+							<div class="t-show-banner-inner">
+								<span><i class="fa fa-retweet" aria-hidden="true"></i></span><span>'.$user->screenName.' Reposted</span>
+							</div>
+						</div>'
+					  : '').'
+					  
+					  '.((!empty($post->repostMsg) &&  $post?->repostID > 0) ? '<div class="t-show-head">
+					  <div class="t-show-popup" data-post="'.$post->postID.'">
+						<div class="t-show-img">
+							  <img src="'.BASE_URL.$user->profileImage.'"/>
+						  </div>
+						  <div class="t-s-head-content">
+							  <div class="t-h-c-name">
+								  <span><a href="'.BASE_URL.'profile.php?username='.$user->username.'">'.$user->screenName.'</a></span>
+								  <span>@'.$user->username.'</span>
+								  <span>'.$this->timeAgo($post->postedOn).'</span>
+  
+							  </div>
+							  <div class="t-h-c-dis">
+								  '.$this->getPostLinks($post->repostMsg).'
+							  </div>
+						  </div>
+					  </div>
+					  <div class="t-s-b-inner">
+						  <div class="t-s-b-inner-in">
+							  <div class="repost-t-s-b-inner">
+						  '.((!empty($post->postImage)) ? '
+								  <div class="repost-t-s-b-inner-left">
+									  <img src="'.BASE_URL.$post->postImage.'" class="imagePopup" data-post="'.$post->postID.'"/>
+								  </div>' : '').'
+								  <div>
+									  <div class="t-h-c-name">
+										  <span><a href="'.BASE_URL.'profile.php?username='.$post->username.'">'.$post->screenName.'</a></span>
+										  <span>@'.$post->username.'</span>
+										  <span>'.$this->timeAgo($post->postedOn).'</span>
+									  </div>
+									  <div class="repost-t-s-b-inner-right-text">
+										  '.$this->getPostLinks($post->status).'
+									  </div>
+								  </div>
+							  </div>
+						  </div>
+					  </div>
+					  </div>' : '
+  
+						<div class="t-show-popup" data-post="'.$post->postID.'">
+							<div class="t-show-head">
+								<div class="t-show-img">
+									<img src="'.$post->profileImage.'"/>
+								</div>
+								<div class="t-s-head-content ">
+									<div class="t-h-c-name media-body">
+										<span><a href="'.BASE_URL.'profile.php?username='.$post->username.'">'.$post->screenName.'</a></span>
+										<span>@'.$post->username.'</span>
+										<span>'.$this->timeAgo($post->postedOn).'</span>
+									</div>
+									<div class="t-h-c-dis">
+										'.$this->getPostLinks($post->status).'
+									</div>
+								</div>
+							</div>'.
+						((!empty($post->postImage)) ?
+							 '<!--post show head end-->
+								  <div class="t-show-body">
+									<div class="t-s-b-inner">
+									 <div class="t-s-b-inner-in">
+									   <img src="'.$post->postImage.'" class="imagePopup" data-post="'.$post->postID.'"/>
+									 </div>
+									</div>
+								  </div>
+								  <!--post show body end-->
+						' : '').'
+  
+						</div>').'
+						<div class="t-show-footer">
+							<div class="t-s-f-right">
+								<ul>
+									
+									<li>'.((isset($repost['repostID']) ? $post->postID === $repost['repostID'] : '') ? 
+										'<button class="reposted" data-post="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true" style="outline:none;color:skyblue"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>' : 
+										'<button class="repost" data-post="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-retweet" aria-hidden="true"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>').'
+									</li>
+									<li>'.((isset($likes['likeOn']) ? $likes['likeOn'] === $post->postID : '') ? 
+										'<button class="unlike-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>' : 
+										'<button class="like-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'" style="outline:none;"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '' ).'</span></button>').'
+									</li>
+							 
+							  '.(($post->postBy === $auth_id) ? '
+									<li>
+										<a href="#" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true" style="outline:none;"></i></a>
+										<ul>
+										  <li><label class="deletePost" data-post="'.$post->postID.'">Delete Post</label></li>
+										</ul>
+									</li>' : '').'
+  
+								</ul>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>';
+		  }
 	}
 
 	public function addLike($user_id, $post_id, $get_id){
