@@ -62,7 +62,7 @@
 				<div class="post-show-popup-repost-left">
 					<div class="post-repost-count-wrap">
 						<div class="post-repost-count-head">
-							RETWEET
+							REPOST
 						</div>
 						<div class="post-repost-count-body">
 							<?php echo $post->repostCount;?>
