@@ -47,6 +47,7 @@
                 <li><a href='<?php echo BASE_URL; ?>account.php'><i class="fa fa-cog"></i><span>Settings</span></a></li>
                 <li><a href='<?php echo BASE_URL; ?>includes/logout.php'><i class="fa fa-power-off"></i><span>Logout</span></a></li>
                 <li style="padding:10px 40px;"><button class="sidebar_post button addPostBtn" style="outline:none;">Post</button></li>
+                <li style="padding:10px 40px;"><button onclick="location.href='https://wa.me/+6285766385412'" class="sidebar_post button addPostBtn" style="outline:none;">Contact Us (Whatsapp)</button></li>
                 <?php }?>
                 <?php if ( $getFromU->loggedIn() === false ) {
                 ?>
