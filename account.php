@@ -51,24 +51,24 @@ if ( isset( $_POST['submit'] ) ) {
     <script src='<?php echo BASE_URL; ?>assets/js/jquery-3.1.1.min.js'></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class='grid-container'>
 
         <?php require 'left-sidebar.php' ?>
 
-        <div class='main'>
-            <p class='page_title mb-0' style='border-bottom:none;'><i class='fa fa-cog mr-4' style='color: black;'></i>Settings</p>
+        <div class='main' style="border: none;">
+            <p class='page_title mb-0' style='background-color: #1d2226; color: white; border:white'><i class='fa fa-cog mr-4' style='color: white;'></i>Settings</p>
 
             <div class='setting-head'>
-                <div class='account-text active'>
-                    <a class='bold' href='<?php echo BASE_URL?>account.php'>Account</a>
+                <div class='account-text active'  style="background-color:#1d2226">
+                    <a class='bold' style="color:white;" href='<?php echo BASE_URL?>account.php'>Account</a>
                 </div>
-                <div class='password-text'>
-                    <a href='<?php echo BASE_URL;?>password.php'>Password</a>
+                <div class='password-text' style='border-bottom:none; background-color: #1d2226; color:white;'>
+                    <a style="color: white" href='<?php echo BASE_URL;?>password.php'>Password</a>
                 </div>
             </div>
 
-            <div class='righter mt-4'>
+            <div class='righter mt-4' style="padding: 0;">
                 <div class='inner-righter'>
                     <div class='acc'>
                         <div class='acc-heading'>
@@ -79,7 +79,7 @@ if ( isset( $_POST['submit'] ) ) {
                                 <div class='acc-wrap'>
                                     <label class='ml-3' for=''>Username</label>
                                     <div class='form-group col-auto'>
-                                        <input class='form-control' type='text' name='username' value="<?php echo $user->username;?>" />
+                                        <input class='form-control' style="background-color: #1d2226; border: 1px solid #38434f; color: white;" type='text' name='username' value="<?php echo $user->username;?>" />
                                         <span>
                                             <?php if ( isset( $error['username'] ) ) {
     echo $error['username'];
@@ -101,7 +101,7 @@ if ( isset( $_POST['submit'] ) ) {
 -->
                                 <div class='acc-wrap'>
                                     <div class='acc-right mt-3'>
-                                        <button class='new-btn' type='Submit' id='save' name='submit' value='Save changes'>Save</button>
+                                        <button class='new-btn' style="background-color: white; color: black; border: none;" type='Submit' id='save' name='submit' value='Save changes'>Save</button>
                                     </div>
                                     <div class='settings-error'>
                                         <?php if ( isset( $error['fields'] ) ) {

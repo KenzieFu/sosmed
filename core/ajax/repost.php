@@ -15,12 +15,12 @@
 ?>
 <div class="repost-popup">
 <div class="wrap5">
-	<div class="repost-popup-body-wrap">
+	<div class="repost-popup-body-wrap" style="background-color: #1d2226; border: none">
 		<div class="repost-popup-heading">
 			<h3>Repost this to followers?</h3>
 			<span><button class="close-repost-popup"><i class="fa fa-times" aria-hidden="true" style="outline:none;"></i></button></span>
 		</div>
-		<div class="repost-popup-input">
+		<div class="repost-popup-input" >
 			<div class="repost-popup-input-inner">
 				<input class="repostMsg" type="text" placeholder="Add a comment.."/>
 			</div>

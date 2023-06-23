@@ -65,6 +65,9 @@ if(isset($_POST['signup'])){
             </div>';
       }
     ?>    
+		                        <div class="middle" ">
+                            <span style="font-size: 22px; color: white;">Register</span>
+                        
     <div class="signup-form">
             <div class="form-group">
               <input class="form-control" type="text" name="screenName" placeholder="Full Name" />
@@ -78,7 +81,7 @@ if(isset($_POST['signup'])){
             <input class="new-btn m-auto mt-5" type="submit" name="signup" Value="Signup">
           </div>
 
-</form>
+</form></div>
 <script type="text/javascript">
         setTimeout(function() {
             // Closing the alert 

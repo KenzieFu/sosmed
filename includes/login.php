@@ -47,12 +47,17 @@ if ($_SERVER['REQUEST_METHOD'] == "GET" && realpath(__FILE__) == realpath($_SERV
     <div class="top">
         <form method="post" autocomplete="off">
         
-        <h1 class="mb-4 " style="text-align:center; font-size: 22px">Log in</h1>
-        <div class="form-group  form-row">
-            <input class="form-control col-4 mr-3 ml-5 mt-1 p-3" name="email" type="text" placeholder="Email" style="height:50px;" />
-            <input class="form-control col-4 mr-3 mt-1 p-3" name="password" type="password" placeholder="Password" style="height:50px;"/>
-        
-        <input class="new-btn col-2 mt-1" name="login" type="submit" value="login" style="height: 50px; font-size:20px;">
+        <h1 class="mb-4 " style="text-align:center; font-size: 22px; color: white;">Log in</h1>
+        <div class="form-group">
+            <input class="form-control m-auto col-6 mr-3 ml-5 mt-1 p-3" name="email" type="text" placeholder="Email" style="height:50px;" />
+            </div>
+
+            <div class="form-group">
+            <input class="form-control m-auto col-6 mr-3 ml-5 mt-1 p-3" name="password" type="password" placeholder="Password" style="height:50px;"/>
+            </div>
+
+            <div class="form-group">        
+        <input class="new-btn m-auto mt-5" name="login" type="submit" value="login" style="height: 45px; font-size:20px;">
         </div>
     <?php
       if(isset($errorMsg)){

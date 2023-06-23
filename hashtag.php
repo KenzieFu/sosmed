@@ -172,7 +172,7 @@
 				<div class="wrapper-following">
 					<div class="wrap-follow-inner">
 						<?php foreach($accounts AS $users) :?>
-						<div class="follow-unfollow-box">
+						<div class="follow-unfollow-box" style="background-color: #1d2226">
 							<div class="follow-unfollow-inner">
 								<div class="follow-background">
 									<img src="<?php echo BASE_URL.$users->profileCover;?>" />
@@ -231,7 +231,7 @@
 								<img src="'.BASE_URL.$user->profileImage.'"/>
 							</div>
 							<div class="t-s-head-content">
-								<div class="t-h-c-name">
+								<div class="t-h-c-name" style="color: white;">
 									<span><a href="'.BASE_URL.$user->username.'">'.$user->screenName.'</a></span>
 									<span>@'.$user->username.' </span>
 									<span>'.$getFromT->timeAgo(isset($repost['postedOn'])).'</span>
@@ -249,7 +249,7 @@
 										<img src="'.BASE_URL.$post->postImage.'"/>	
 									</div>' : '').'
 									<div>
-										<div class="t-h-c-name">
+										<div class="t-h-c-name" style="color: white;">
 											<span><a href="#">'.$post->screenName.'</a></span>
 											<span>@'.$post->username.'</span>
 											<span>'.$getFromT->timeAgo($post->postedOn).'</span>
@@ -269,7 +269,7 @@
 										<img src="'.BASE_URL.$post->profileImage.'"/>
 									</div>
 									<div class="t-s-head-co	ntent">
-										<div class="t-h-c-name">
+										<div class="t-h-c-name" style="color: white;">
 											<span><a href="'.BASE_URL.$post->username.'">'.$post->screenName.'</a></span>
 											<span>@'.$post->username.'</span>
 											<span>'.$getFromT->timeAgo($post->postedOn).'</span>

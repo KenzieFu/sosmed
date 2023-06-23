@@ -66,15 +66,15 @@
     	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class="grid-container">
 
         <?php require 'left-sidebar.php' ?>
 
 
-        <div class="main">
+        <div class="main" style="background-color: black;">
 
-            <p class="page_title mb-0"><i class="fa fa-pencil-square-o mr-4" style="color: black;"></i>Edit Profile</p>
+            <p style="color: white; background-color: #1d2226" class="page_title mb-0"><i  style="color: white" class="fa fa-pencil-square-o mr-4" style="color: black;"></i>Edit Profile</p>
 
             <div class='profile-box'>
                 <div class='profile-cover mt-0'>
@@ -165,8 +165,8 @@
                             <?php if(isset($imgError)){echo '<li>'.$imgError.'</li>';}?>
                             <div class="profile-name-wrap">
                                 <div class="form-group">
-                                    <label class="ml-1">Name</label>
-                                    <input type="text" class="form-control" name="screenName" value="<?php echo $user->screenName;?>" />
+                                    <label class="ml-1" style="color: white;">Name</label>
+                                    <input type="text" style="background-color: #1d2226; border: 1px solid #38434f; color: white;" class="form-control" name="screenName" value="<?php echo $user->screenName;?>" />
                                 </div>
                                 <!--
                                 <div class="profile-tname">
@@ -176,20 +176,20 @@
                             </div>
 
                             <div class="form-group">
-                               <label class="ml-1">Location</label>
-                                <input class="form-control" id="cn" type="text" name="country" placeholder="Country" value="<?php echo $user->country;?>" />
+                               <label class="ml-1" style="color: white;">Location</label>
+                                <input class="form-control" style="background-color: #1d2226; border: 1px solid #38434f; color: white;" id="cn" type="text" name="country" placeholder="Country" value="<?php echo $user->country;?>" />
                             </div>
 
 
                             <div class="form-group">
-                               <label class="ml-1">Website</label>
-                                <input class="form-control" type="text" name="website" placeholder="Website" value="<?php echo $user->website;?>" />
+                               <label class="ml-1" style="color: white;">Website</label>
+                                <input class="form-control" style="background-color: #1d2226; border: 1px solid #38434f; color: white;" type="text" name="website" placeholder="Website" value="<?php echo $user->website;?>" />
                             </div>
 
                             <div class="profile-bio-wrap">
                                 <div class="form-group">
-                                    <label class="ml-1">Bio</label>
-                                    <textarea class="status form-control" name="bio"><?php echo $user->bio;?></textarea>
+                                    <label class="ml-1" style="color: white;">Bio</label>
+                                    <textarea class="status form-control"  style="background-color: #1d2226; border: 1px solid #38434f; color: white;"name="bio"><?php echo $user->bio;?></textarea>
                                     <div class="hash-box">
                                         <ul>
                                         </ul>

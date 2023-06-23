@@ -61,17 +61,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="right col-md-6 col-12">
+                    <div class="right col-md-6 col-12" style="background-color: #1d2226;">
 
                         <?php include 'includes/login.php';?>
                         <br>
                         <br>
                         <br>
                         <br>
-
-                        <div class="middle" ">
-                            <span style="font-size: 22px">Register</span>
-                        </div>
                         <?php include 'includes/signup-form.php';?>
 
                     </div>

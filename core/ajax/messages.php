@@ -60,7 +60,7 @@
 								<div class="people-img">
 									<img src="<?php echo BASE_URL.$message->profileImage;?>"/>
 								</div>
-								<div class="name-right2">
+								<div class="name-right2" style="color: white;">
 									<span><a href=<?=BASE_URL.'profile.php?username='.$message->username?>><?php echo $message->screenName;?></a></span><span>@<?php echo $message->username;?></span>
 								</div>
 								
@@ -85,13 +85,13 @@
 			<script type="text/javascript" src="<?php echo BASE_URL;?>/assets/js/search.js"></script>
  			 
 				<input id="mass" type="checkbox" checked="unchecked" />
-				<div class="back">
+				<div class="back" style="background-color: #1d2226; border: none;">
 					<div class="back-header">
 						<div class="back-left">
 							Direct message
 						</div>
 						<div class="back-right">
-							<label for="mass"  class="new-message-btn">New messages</label>
+							<label for="mass"  class="new-message-btn" style="background-color: white; color: black; border-radius: 20px;">New messages</label>
 							<label for="popup-message-post"><i class="fa fa-times" aria-hidden="true"></i></label>
 						</div>
 					</div>
@@ -173,9 +173,9 @@
 				<div class="main-msg-footer">
 					<div class="main-msg-footer-inner form-group">
 						<ul>
-							<li><textarea class="form-control" id="msg" name="msg" cols="100%" placeholder="Write some thing!"></textarea></li>
+							<li><textarea  style="background-color: #1d2226; border: 1px solid #38434f; color: white;" class="form-control" id="msg" name="msg" cols="100%" placeholder="Write some thing!"></textarea></li>
 						
-							<li><input class="mt-2"id="send" data-user="<?php echo $messageFrom;?>" type="submit" value="Send"/></li>
+							<li><input style="background-color: #1d2226; border: 1px solid #38434f; color: white;" class="mt-2"id="send" data-user="<?php echo $messageFrom;?>" type="submit" value="Send"/></li>
 						</ul>
 					</div>
 				</div>

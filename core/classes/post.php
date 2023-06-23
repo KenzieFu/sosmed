@@ -20,9 +20,9 @@ class Post extends User{
 	      $repost = $this->checkRepost($post->postID, $user_id);
 	      $user = $this->userData($post->repostBy);
 			
- 	      echo '<div class="all-post">
-			      <div class="t-show-wrap">
-			       <div class="t-show-inner">
+ 	      echo '<div class="all-post" style="padding: 0px; border: 0; margin-bottom: 10px ">
+			      <div class="t-show-wrap" style="background-color: #1d2226;border-radius: 20px;">
+			       <div class="t-show-inner" style="">
 			       '.(( $post->repostID > 0 ) ? '
 			      	<div class="t-show-banner">
 			      		<div class="t-show-banner-inner">
@@ -37,31 +37,31 @@ class Post extends User{
 			        		<img src="'.BASE_URL.$user->profileImage.'"/>
 			        	</div>
 			        	<div class="t-s-head-content">
-			        		<div class="t-h-c-name">
-			        			<span><a href="'.BASE_URL.'profile.php?username='.$user->username.'">'.$user->screenName.'ssss</a></span>
+			        		<div class="t-h-c-name" style="color: white;">
+			        			<spanstyle="color: white"><a href="'.BASE_URL.'profile.php?username='.$user->username.'">'.$user->screenName.'ssss</a></span>
 			        			<span>@s'.$user->username.'</span>
 			        			<span>'.$this->timeAgo($post->postedOn).'</span>
 
 			        		</div>
-			        		<div class="t-h-c-dis">
+			        		<div class="t-h-c-dis" style="color: white;">
 			        			'.$this->getPostLinks($post->repostMsg).'
 			        		</div>
 			        	</div>
 			        </div>
 			        <div class="t-s-b-inner">
-			        	<div class="t-s-b-inner-in">
+			        	<div class="t-s-b-inner-in" style="float: left">
 			        		<div class="repost-t-s-b-inner">
 			            '.((!empty($post->postImage)) ? '
 			        			<div class="repost-t-s-b-inner-left">
 			        				<img src="'.BASE_URL.$post->postImage.'" class="imagePopup" data-post="'.$post->postID.'"/>
 			        			</div>' : '').'
 			        			<div>
-			        				<div class="t-h-c-name">
+			        				<div class="t-h-c-name" style="color: white;">
 			        					<span><a href="'.BASE_URL.'profile.php?username='.$post->username.'">'.$post->screenName.'</a></span>
 			        					<span>@'.$post->username.'</span>
 			        					<span>'.$this->timeAgo($post->postedOn).'</span>
 			        				</div>
-			        				<div class="repost-t-s-b-inner-right-text">
+			        				<div class="repost-t-s-b-inner-right-text" style="color: white;">
 			        					'.$this->getPostLinks($post->status).'
 			        				</div>
 			        			</div>
@@ -76,12 +76,12 @@ class Post extends User{
 			      				<img src="'.$post->profileImage.'"/>
 			      			</div>
 			      			<div class="t-s-head-content ">
-			      				<div class="t-h-c-name media-body">
+			      				<div class="t-h-c-name media-body" style="color: white;">
 			      					<span><a href="'.BASE_URL.'profile.php?username='.$post->username.'">'.$post->screenName.'</a></span>
 			      					<span>@'.$post->username.'</span>
 			      					<span>'.$this->timeAgo($post->postedOn).'</span>
 			      				</div>
-			      				<div class="t-h-c-dis">
+			      				<div class="t-h-c-dis" style="color: white;">
 			      					'.$this->getPostLinks($post->status).'
 			      				</div>
 			      			</div>

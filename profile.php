@@ -34,17 +34,17 @@ include 'core/init.php';
       	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class="grid-container">
 
         <?php require 'left-sidebar.php' ?>
 
         <!--Profile cover-->
-        <div class="main">
+        <div class="main" style="background-color: black; border: none;">
             <div class=''>
-                <div class=''>
+                <div class='' style="background-color: #1d2226;">
                     <!--POST WRAPPER-->
-                    <p class="page_title mb-0"><i class="fa fa-arrow-left mr-4" style="color:black;"></i><?php echo $profileData->username; ?></p>
+                    <p class="page_title mb-0" style="color: white; background-color: #1d2226"><i class="fa fa-arrow-left mr-4" style="color:white;"></i><?php echo $profileData->username; ?></p>
                     <div class='profile-box'>
                         <div class='profile-cover mt-0'>
                             <!-- PROFILE-IMAGE -->
@@ -63,8 +63,8 @@ include 'core/init.php';
                             </div>
                             <div class="profile-text">
                                 <div class="profile-name">
-                                    <h5 class="mb-1 mt-2"><b><?php echo $profileData->screenName; ?></b></h5>
-                                    <h6 class="mt-0" style="color:rgb(91, 112, 131);"><?php echo '@' . $profileData->username; ?></h6>
+                                    <h5 class="mb-1 mt-2" style="color: white;"><b><?php echo $profileData->screenName; ?></b></h5>
+                                    <h6 class="mt-0" style="color:white;"><?php echo '@' . $profileData->username; ?></h6>
                                 </div>
                                 <div class="profile-bio">
                                     <h5><?php echo $getFromT->getPostLinks($profileData->bio); ?></h5>
@@ -78,7 +78,7 @@ include 'core/init.php';
                                     <h6 style="color:rgb(91, 112, 131);"><i class="fa fa-map-marker mr-2"></i><?php echo $profileData->country; ?></h6>
                                     <?php } ?>
                                 </div>
-                                <div class="profile-follow mt-2 d-flex">
+                                <div class="profile-follow mt-2 d-flex" style="color: white;">
                                     <h6 class="mr-3 ml-1" style="font-weight: 700;"><?php echo $profileData->following; ?>
                                         <a href="<?php echo BASE_URL.'profile.php?username='.$profileData->username; ?>">
                                             <a href="<?php echo BASE_URL.'following.php?username='.$profileData->username; ?>" style="color:rgb(91, 112, 131);">Following</a>
@@ -94,7 +94,7 @@ include 'core/init.php';
                             </div>
                         </div>
                     </div>
-                    <div class="space" style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);">
+                    <div class="space" style="height:10px; width:100%; background:black;">
                     </div>
                     <!--POST WRAP END-->
 
@@ -105,7 +105,7 @@ include 'core/init.php';
                     </div>
                     <!--POSTS SHOW WRAPPER-->
 
-                    <div class='loading-div'>
+                    <div class='loading-div' style="border: none;">
                         <img id='loader' src='assets/images/loading.svg' style='display: none;' />
                     </div>
                     <div class='popupPost'></div>

@@ -28,7 +28,7 @@
 					return "<button class='f-btn following-btn follow-btn' data-follow='".$profileID."' data-profile='".$followID."' style='outline:none;'>Following</button>";
 				}else{
 					//Follow button
-					return "<button class='f-btn follow-btn' data-follow='".$profileID."' data-profile='".$followID."' style='outline:none;'><i class='fa fa-user-plus'></i>Follow</button>";
+					return "<button class='f-btn follow-btn' data-follow='".$profileID."' data-profile='".$followID."' style='outline:none; background-color: white;'><i class='fa fa-user-plus'></i>Follow</button>";
 				}
 			}else{
 				//edit button
@@ -78,7 +78,7 @@
 		$followings = $stmt->fetchAll(PDO::FETCH_OBJ);
 		foreach ($followings as $following) {
 			echo '<div class="following-box">
-                <div class="follow-unfollow-box">
+                <div class="follow-unfollow-box" style="background-color: #1d2226; border: none;">
 					<div class="follow-unfollow-inner">
 						
 						<div class="follow-person-button-img mt-2">
@@ -100,7 +100,7 @@
 				</div>
 			</div>';
 		}
-        echo '<div class="space"style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);"></div>';
+        echo '<div class="space"style="height:10px; width:100%; background:black;"></div>';
 	}
 
 	public function followersList($profileID, $user_id, $followID){
@@ -109,7 +109,7 @@
 		$stmt->execute();
 		$followings = $stmt->fetchAll(PDO::FETCH_OBJ);
 		foreach ($followings as $following) {
-			echo '<div class="following-box">
+			echo '<div class="following-box" >
                 <div class="follow-unfollow-box">
 					<div class="follow-unfollow-inner">
 						<div class="follow-person-button-img mt-2">
@@ -134,22 +134,22 @@
 					</div>
 				</div></div>';
 		}
-        echo '<div class="space"style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);"></div>';
+        echo '<div class="space"style="height:10px; width:100%; background:black;"></div>';
 	}
 
 	public function whoToFollow($user_id, $profileID){
 		$stmt = $this->pdo->prepare("SELECT * FROM `users` WHERE `user_id` != :user_id AND `user_id` NOT IN (SELECT `receiver` FROM `follow` WHERE `sender` = :user_id) ORDER BY rand() LIMIT 3");
 		$stmt->execute(array("user_id" => $user_id));
 		$users = $stmt->fetchAll(PDO::FETCH_OBJ);
-		echo '<div class="trends_container"><div class="trends_box"><div class="trends_header"><p>Who to follow</p></div>';
+		echo '<div class="trends_container"><div class="trends_box" style="background-color: #1d2226;"><div class="trends_header"><p style="color: white;">Who to follow</p></div>';
 		foreach ($users as $user) {
-			echo '<div class="follow-body trend">
+			echo '<div class="follow-body trend" style="border: none;">
 					<div class="follow-img media-inner">
 					  <img src="'.BASE_URL.$user->profileImage.'"/>
 				    </div>
 					<div class="media-inner">
 						<div class="fo-co-head media-body">
-							<a href="'.BASE_URL.'profile.php?username='.$user->username.'">'.$user->screenName.'</a><br><span>@'.$user->username.'</span>
+							<a style="color: white;" href="'.BASE_URL.'profile.php?username='.$user->username.'">'.$user->screenName.'</a><br><span>@'.$user->username.'</span>
 						</div>
 						<!-- FOLLOW BUTTON -->
 						'.$this->followBtn($user->user_id, $user_id, $profileID).'

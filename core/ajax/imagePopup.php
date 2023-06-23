@@ -13,13 +13,13 @@
 <div class="img-popup">
 <div class="wrap6">
 <span class="colose">
-	<button class="close-imagePopup"><i class="fa fa-times" aria-hidden="true"></i></button>
+	<button class="close-imagePopup" ><i class="fa fa-times" aria-hidden="true"></i></button>
 </span>
 <div class="img-popup-wrap">
 	<div class="img-popup-body">
 		<img src="<?php echo BASE_URL.$post->postImage;?>"/>
 	</div>
-	<div class="img-popup-footer">
+	<div class="img-popup-footer" style="background-color: #1d2226;">
 		<div class="img-popup-post-wrap">
 			<div class="img-popup-post-wrap-inner">
 				<div class="img-popup-post-left">
@@ -41,8 +41,8 @@
 					echo '<ul> 
 						'.(($getFromU->loggedIn()) ?   '
 									
-								<li>'.(((isset($repost['repostID'])) ? $post->postID === $repost['repostID'] OR $user_id === $repost['repostBy'] : '') ? '<button class="reposted" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i style="color:skyblue;" class="fa fa-retweet" aria-hidden="true"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>' : '<button class="repost" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-retweet" aria-hidden="true"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>').'</li>
-								<li>'.((isset($likes['likeOn']) == $post->postID) ? '<button class="unlike-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '').'</span></button>' : '<button class="like-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '').'</span></button>').'</li>
+								<li>'.(((isset($repost['repostID'])) ? $post->postID === $repost['repostID'] OR $user_id === $repost['repostBy'] : '') ? '<button style="height: 40px; width: 10px;" class="reposted" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i style="color:skyblue;" class="fa fa-retweet" aria-hidden="true"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>' : '<button style="height: 40px; width: 30px;"class="repost" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-retweet" aria-hidden="true"></i><span class="repostsCount">'.(($post->repostCount > 0) ? $post->repostCount : '').'</span></button>').'</li>
+								<li>'.((isset($likes['likeOn']) == $post->postID) ? '<button style="height: 40px; width: 30px;" class="unlike-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-heart" aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '').'</span></button>' : '<button class="like-btn" data-post="'.$post->postID.'" data-user="'.$post->postBy.'"><i class="fa fa-heart-o"  aria-hidden="true"></i><span class="likesCounter">'.(($post->likesCount > 0) ? $post->likesCount : '').'</span></button>').'</li>
 								'.(($post->postBy === $user_id) ? ' 
 								<li>
 								

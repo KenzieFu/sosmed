@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL;?>assets/css/style-complete.css" />
 </head>
 
-<body>
+<body style="background-color: black;">
     <div class="grid-container">
 
         <?php require 'left-sidebar.php' ?>
@@ -41,13 +41,16 @@
         <script type="text/javascript" src="<?php echo BASE_URL;?>assets/js/repost.js"></script>
 
 
-        <div class="main">
+        <div class="main" style="border: none;">
 <!--            <div class="in-center">-->
 <!--                <div class="in-center-wrap">-->
 
                     <!--NOTIFICATION WRAPPER FULL WRAPPER-->
-                    <p class="page_title mb-0">Notifications</p>
-                    <div class="notification-full-wrapper">
+                    <p class="page_title mb-0" style="background-color: #1d2226; color:white;">Notifications</p>
+                    <div class="space" style="height:10px; width:100%; background-color:black; border:none;">
+                </div>
+                
+                    <div class="notification-full-wrapper" style="border-radius:20px;">
 <!-- 
                         <div class="notification-full-head">
                             <div>
@@ -64,7 +67,7 @@
                         <?php if($data->type == 'follow') :?>
                         <!-- Follow Notification -->
                         <!--NOTIFICATION WRAPPER-->
-                        <div class="notification-wrapper">
+                        <div class="notification-wrapper" style="background-color: #1d2226; border:none; ">
                             <div class="notification-inner">
                                 <div class="notification-header">
 
@@ -116,7 +119,7 @@
                                 <div class="notification-footer">
                                     <div class="noti-footer-inner">
                                         <div class="noti-footer-inner-left">
-                                            <div class="t-h-c-name">
+                                            <div class="t-h-c-name" style="color: white;">
                                                 <span><a href="<?php echo BASE_URL.'profile.php?username='.$user->username;?>"><?php echo $user->username;?></a></span>
                                                 <span>@<?php echo $user->username;?></span>
                                                 <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
@@ -159,7 +162,7 @@
                                         <div class="noti-footer-inner">
 
                                             <div class="noti-footer-inner-left">
-                                                <div class="t-h-c-name">
+                                                <div class="t-h-c-name" style="color: white;">
                                                     <span><a href="<?php echo BASE_URL.'profile.php?username='.$user->username;?>"><?php echo $user->screenName;?></a></span>
                                                     <span>@<?php echo $user->username;?></span>
                                                     <span><?php echo $getFromU->timeAgo($data->postedOn);?></span>
@@ -200,7 +203,7 @@
 										<img src="'.BASE_URL.$post->profileImage.'"/>
 									</div>
 									<div class="t-s-head-co	ntent">
-										<div class="t-h-c-name">
+										<div class="t-h-c-name" style="color: white;">
 											<span><a href="'.BASE_URL.'profile.php?username='.$post->username.'">'.$post->screenName.'</a></span>
 											<span>Mentioned you - </span>
 											<span>'.$getFromT->timeAgo($post->postedOn).'</span>
@@ -246,7 +249,7 @@
                     </div>
                     <!--NOTIFICATION WRAPPER FULL WRAPPER END-->
 
-                    <div class="loading-div">
+                    <div class="loading-div" style="border: none;">
                         <img id="loader" src="<?php echo BASE_URL;?>assets/images/loading.svg" style="display: none;" />
                     </div>
                     <div class="popupPost"></div>

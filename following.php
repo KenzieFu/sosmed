@@ -37,16 +37,16 @@
     		<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="background-color: black">
     <div class="grid-container">
 
         <?php require 'left-sidebar.php' ?>
 
-        <div class="main">
+        <div class="main" style="background-color: black; border: none;">
             <div class=''>
                 <div class=''>
                     <!--POST WRAPPER-->
-                    <p class="page_title mb-0"><i class="fa fa-arrow-left mr-4" style="color: black;"></i><?php echo $user->username; ?></p>
+                    <p style="color: white; background-color:#1d2226" class="page_title mb-0"><i class="fa fa-arrow-left mr-4" style="color: white;"></i><?php echo $user->username; ?></p>
                     <div class='profile-box'>
                         <div class='profile-cover mt-0'>
                             <!-- PROFILE-IMAGE -->
@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="space" style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);">
+                    <div class="space" style="height:10px; width:100%; ">
                     </div>
                     <!--POST WRAP END-->
                     

@@ -56,19 +56,19 @@ if ( isset( $_POST['post'] ) ) {
 
 </head>
 
-<body>
+<body style="background-color: black;">
 
     <div class="grid-container">
         <!--    <div class='wrapper'>-->
 
         <?php require 'left-sidebar.php' ?>
 
-        <div class="main">
+        <div class="main" style="border: none; border-radius: 20px;">
             <div class=''>
                 <div class=''>
                     <!--POST WRAPPER-->
-                    <p class="page_title mb-0" style="background-color: white; color: #333333;">Home</p>
-                    <div class='post_box post_add'>
+                    <p class="page_title mb-0" style="background-color: white; color: white; background-color: #1d2226;">Home</p>
+                    <div class='post_box post_add' style="background-color: #1d2226">
                         <div class='left-post ml-3'>
                             <!-- PROFILE-IMAGE -->
                             <img class="mr-3" src="<?php echo $user->profileImage; ?>" style="width: 53px;height:53px;border-radius:50%;" />
@@ -96,7 +96,7 @@ if ( isset( $_POST['post'] ) ) {
                                     <div class='t-fo-left post_icons-add'>
                                         <ul>
                                             <input type='file' name='file' id='file' onchange="loadFile(event)" />
-                                            <li><label for='file'><i class='fa fa-image' style="color: black;" aria-hidden='true'></i></label>
+                                            <li><label for='file'><i class='fa fa-image' style="color: white;" aria-hidden='true'></i></label>
                                     
                                             </li>
                                             <span class='post-error'><?php if ( isset( $error ) ) {
@@ -113,7 +113,7 @@ if ( isset( $_POST['post'] ) ) {
                                         <!--<span id='count'>140</span>-->
                                         <!--<input type='submit' name='post' value='post' />-->
 
-                                        <button class="button_post" type="submit" name="post" style="outline:none;">Post</button>
+                                        <button class="button_post" type="submit" name="post" style="outline:none; color: black; background-color:white;">Post</button>
 
                                     </div>
                             </form>
@@ -121,7 +121,7 @@ if ( isset( $_POST['post'] ) ) {
                         <!--</div>-->
                     </div>
                 </div>
-                <div class="space" style="height:10px; width:100%; background:rgba(230, 236, 240, 0.5);">
+                <div class="space" style="height:10px; width:100%; background-color:black; border:none;">
                 </div>
                 <!--POST WRAP END-->
 
@@ -132,7 +132,7 @@ if ( isset( $_POST['post'] ) ) {
                 </div>
                 <!--POSTS SHOW WRAPPER-->
 
-                <div class='loading-div'>
+                <div class='loading-div' style="border: none;">
                     <img id='loader' src='assets/images/loading.svg' style='display: none;' />
                 </div>
                 <div class='popupPost'></div>

@@ -40,12 +40,12 @@ if(isset($_POST['next'])){
    		<link rel="stylesheet" href="../assets/css/font-awesome.css"/>
   	</head>
   	<!--Helvetica Neue-->
-  <body>
-  <div class="wrapper">
+  <body style="background-color: black;">
+  <div class="wrapper" ">
   <!-- nav wrapper -->
-  <div style="background:gray" class="nav-wrapper">
+  <div style="background:gray" class="nav-wrapper" style="background-color: black;">
 
-  	<div  class="nav-container">
+  	<div  class="nav-container" >
   		<div class="nav-second">
   			<ul>
   				<li><a href="#"><img width="50px" height="50px" src="<?=BASE_URL.'/assets/images/saveyu.png'?>" alt=""></i></a></li>
@@ -64,10 +64,10 @@ if(isset($_POST['next'])){
    		<div class="step-wrapper">
   		    <div class="step-container">
   				<form method="post" autocomplete="off">
-  					<h2>Choose a Username</h2>
-  					<h4>Don't worry, you can always change it later.</h4>
+  					<h2 style="color: white;">Choose a Username</h2>
+  					<h4 style="color: white;">Don't worry, you can always change it later.</h4>
   					<div class="form-group">
-  						<input class="form-control"type="text" name="username" placeholder="Username" style="font-size: 16px;"/>
+  						<input class="form-control" style="background-color: #1d2226; color:white; border: none;" type="text" name="username" placeholder="Username" style="font-size: 16px;"/>
   					</div>
   					<div>
   						<ul>
@@ -83,8 +83,8 @@ if(isset($_POST['next'])){
     <?php } ?>
     <?php if ($_GET['step'] == '2'){?>
   	<div class='lets-wrapper'>
-  		<div class='step-letsgo'>
-  			<h1>We're glad you're here, <?php echo $user->screenName; ?> </h1>
+  		<div style="color:white" class='step-letsgo'>
+  			<h1 style="color:white">We're glad you're here, <?php echo $user->screenName; ?> </h1>
   			<p style="font-size:22px;">SAVEYU is a constantly updating stream of the coolest, most important news, media, sports, TV, conversations and more--all tailored just for you.</p>
   			<br>
   			<p style="font-size:22px;">
